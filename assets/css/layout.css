@@ -1,0 +1,85 @@
+html, body {
+    display: flex;
+    flex-direction: column;
+}
+
+
+header, footer {
+    flex-shrink: 0; /* Evita que el header o footer colapsen */
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column; /* Asegura que los hijos estén en columna */
+    flex-grow: 1; /* Ocupa todo el espacio disponible entre header y footer */
+    height: 75vh;
+    width: 100%;
+    max-width: 100vw; /* Ocupa todo el ancho disponible */
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: 2px solid #ccc;
+}
+
+.messages-container {
+    flex-grow: 1;
+    box-sizing: border-box; 
+    padding: 1rem;
+    background-color: #3D363C;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+}
+
+.app-header {
+    color: #0078ff;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.5rem;
+    height: 10vh;
+    margin-bottom: 2vh;
+}
+
+.chat-footer {
+    height: 10vh;
+    padding: 1rem;
+    background-color: white;
+    text-align: center;
+    margin-top: 2vh;
+}
+
+p {
+    max-width: 40%; /* Limitar el tamaño del mensaje */
+    white-space: normal; /* Ajusta automáticamente las líneas */
+    padding: 10px;
+    margin: 2px 0; /* Espaciado entre los mensajes */
+    font-size: 14px;
+    line-height: 1.5;
+    color: white;
+    word-wrap: break-word; /* Evitar desbordamientos */
+    overflow-wrap: break-word; /* Hace lo mismo que `word-wrap`, para compatibilidad */
+    word-break: break-word; /* Para romper palabras largas */
+    flex-shrink: 0; /* Evita que los mensajes se compriman o se estiren de forma inesperada */
+}
+
+
+.sent {
+    background-color: #204ECE; /* Celeste claro */
+    align-self: flex-end;
+    border-radius: 15px 15px 0 15px; /* Bordes redondeados en la parte superior y derecha */
+}
+
+.received {
+    background-color: #8D93A6; 
+    align-self: flex-start; /* Alineado a la izquierda */
+    border-radius: 15px 15px 15px 0; /* Bordes redondeados en la parte superior y izquierda */
+}
+
+
+@media (min-width: 1024px) {
+    .chat-container {
+        margin: 0 auto;
+        max-width: 60vw; 
+    }
+}

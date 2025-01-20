@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A real-time chat app for seamless communication.">
+    <meta name="keywords" content="chat app, real-time messaging, responsive design, service workers">
+    <meta name="author" content="Agustín Paul">
+    <title>Real-Time Chat App</title>
+    <link rel="icon" href="assets/images/icons/app-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/typography.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/form.css">
+</head>
+
+<body>
+    <header class="app-header">
+        <h1 class="app-title">Real-Time Chat</h1>
+    </header>
+
+    <main class="chat-container">
+        <article class="messages-container" aria-label="Messages">
+            <div class="messages" id="messages" aria-label="Messages"></div>
+        </article>
+    </main>
+
+    <footer class="chat-footer">
+        <form id="messageForm" class="message-form" aria-label="Send a message" autocomplete="off">
+            <input type="text" id="messageInput" class="message-input" placeholder="Type your message..."
+                aria-label="Message input" required>
+            <button type="submit" class="send-button">Send</button>
+        </form>
+    </footer>
+
+    <script type="module" src="assets/js/main.js" defer></script>
+    <script src="./service-worker.js"></script>
+
+</body>
+
+</html>
