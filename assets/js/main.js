@@ -1,10 +1,13 @@
-const messagesContainer = document.getElementById('messages');
+const messagesContainer = document.getElementById("messages");
 const messageForm = document.getElementById("messageForm");
 const messageInput = document.getElementById("messageInput");
 
 if (navigator.serviceWorker) {
+  const basePath = window.location.pathname.startsWith("/Real-Time-Chat-App")
+    ? '/Real-Time-Chat-App/'
+    : '/';
   navigator.serviceWorker
-    .register("/service-worker.js")
+    .register(`{basePath}service-worker.js`)
     .then((registration) => {
       console.log("Service Worker successfully registered: ", registration);
     })
