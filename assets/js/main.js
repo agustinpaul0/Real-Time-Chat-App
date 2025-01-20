@@ -7,7 +7,7 @@ if (navigator.serviceWorker) {
     ? '/Real-Time-Chat-App/'
     : '/';
   navigator.serviceWorker
-    .register(`{basePath}service-worker.js`)
+    .register(`${basePath}service-worker.js`)
     .then((registration) => {
       console.log("Service Worker successfully registered: ", registration);
     })
