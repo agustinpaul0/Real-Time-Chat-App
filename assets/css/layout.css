@@ -67,13 +67,13 @@ p {
 .sent {
     background-color: #204ECE; /* Celeste claro */
     align-self: flex-end;
-    border-radius: 15px 15px 0 15px; /* Bordes redondeados en la parte superior y derecha */
+    border-radius: 15px 0px 15px 15px; 
 }
 
 .received {
     background-color: #8D93A6; 
     align-self: flex-start; /* Alineado a la izquierda */
-    border-radius: 15px 15px 15px 0; /* Bordes redondeados en la parte superior y izquierda */
+    border-radius: 0px 15px 15px 15px; 
 }
 
 
