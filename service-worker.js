@@ -11,7 +11,6 @@ const ASSETS_TO_CACHE = [
   "/assets/css/reset.css",
   "/assets/css/typography.css",
   "/assets/images/icons/app-icon.png",
-  "/assets/js/main.js",
 ];
 
 self.addEventListener("install", (event) => {
