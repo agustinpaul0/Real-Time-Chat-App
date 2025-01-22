@@ -15,6 +15,27 @@
 3. Click the "Send" button to send the message.
 4. See the message appear instantly in other tabs.
 
+## Running the Project with Offline Functionality
+
+To experience the offline functionality of this project, it is necessary to run it on a local server, as **Service Workers** require an HTTPS environment or at least being served from a local server to function correctly. Additionally, **GitHub Pages** might not handle offline functionality properly, as it may redirect you to a "chrome-error" page in case of a network failure, preventing the Service Worker from operating and using the cached resources.
+
+### Requirements:
+
+1. **Live Server** (or any other server that serves content from an HTTP or HTTPS local environment).
+
+### Steps to run the project with Live Server:
+
+1. Install the **Live Server** extension in your code editor (e.g., Visual Studio Code).
+2. Open the project in your code editor.
+3. Right-click on the `index.html` file and select **Open with Live Server**.
+4. The project will open in your browser, and you can test the offline functionality, such as caching resources and availability when there is no internet connection.
+
+### Why is a local server required?
+
+**Service Workers** require the project to be served from a server because they do not work correctly with local files (`file://`). Using Live Server or a local server resolves this issue, enabling proper offline functionality and the registration of the Service Worker.
+
+**Note:** If the project is hosted on an online server (such as GitHub Pages), it may not handle offline functionality as expected. If you go offline while using the project, GitHub Pages might redirect you to a "chrome-error" page instead of allowing you to operate with cached resources. Therefore, for full offline functionality, it is recommended to use a local server environment.
+
 ## Project Goals
 The primary goal of this project is to explore and implement **Service Workers**, providing a hands-on approach to understanding their functionality.
 
