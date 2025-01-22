@@ -38,6 +38,7 @@ self.addEventListener("message", (event) => {
   });
 });
 
+//Code to intercept fetch requests
 self.addEventListener("fetch", (event) => {
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
