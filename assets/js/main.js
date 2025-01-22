@@ -16,6 +16,21 @@ if (navigator.serviceWorker) {
     });
 }
 
+window.onbeforeunload = () => {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.ready.then((registration) => {
+      registration.unregister().then((boolean) => {
+        if (boolean) {
+          console.log('Service Worker unregistered successfully');
+        } else {
+          console.log('Failed to unregister the Service Worker');
+        }
+      });
+    });
+  }
+};
+
+
 messageForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
