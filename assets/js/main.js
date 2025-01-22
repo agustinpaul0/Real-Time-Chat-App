@@ -4,8 +4,8 @@ const messageInput = document.getElementById("messageInput");
 
 if (navigator.serviceWorker) {
   const basePath = window.location.pathname.startsWith("/Real-Time-Chat-App")
-    ? '/Real-Time-Chat-App/'
-    : '/';
+    ? "/Real-Time-Chat-App/"
+    : "/";
   navigator.serviceWorker
     .register(`${basePath}service-worker.js`)
     .then((registration) => {
@@ -17,13 +17,13 @@ if (navigator.serviceWorker) {
 }
 
 window.onbeforeunload = () => {
-  if ('serviceWorker' in navigator) {
+  if (navigator.serviceWorker) {
     navigator.serviceWorker.ready.then((registration) => {
-      registration.unregister().then((boolean) => {
-        if (boolean) {
-          console.log('Service Worker unregistered successfully');
+      registration.unregister().then((res) => {
+        if (res) {
+          console.log("Service Worker unregistered successfully");
         } else {
-          console.log('Failed to unregister the Service Worker');
+          console.log("Failed to unregister the Service Worker");
         }
       });
     });

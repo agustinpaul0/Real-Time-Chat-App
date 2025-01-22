@@ -43,12 +43,9 @@ self.addEventListener("message", (event) => {
 self.addEventListener("fetch", (event) => {
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
-      console.log("Request: " + event.request.url);
       if (cachedResponse) {
-        console.log("Showing cachedResponse for fetch: " + cachedResponse);
         return cachedResponse;
       } else {
-        console.log("Not found in cache, searching the network...");
         return fetch(event.request).then((response) => {
           // Clone the response before using it
           const responseToCache = response.clone();
@@ -80,7 +77,6 @@ async function handleActivation() {
   await Promise.all(
     cacheNames.map((cacheName) => {
       if (cacheName !== CACHE_NAME) {
-        console.log(`Deleting outdated cache: ${cacheName}`);
         return caches.delete(cacheName);
       }
     })

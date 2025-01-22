@@ -44,6 +44,18 @@ In the near future, the project aims to expand its capabilities to:
 - Enable real-time communication across different devices.
 - Eliminate browser dependency, making the app more versatile.
 
+### Improving Offline Functionality
+
+One possible area of improvement for the offline functionality of my app is implementing a system to maintain a record of messages in a local database, such as **IndexedDB**. This approach would provide several key benefits:
+
+1. **Message Persistence Across Sessions**: Storing messages locally would ensure that conversations are not lost, even if the user refreshes the page or closes and reopens the app.
+
+2. **Offline Chat Continuity**: If the connection is lost, users could continue chatting seamlessly within the same conversation, as all previous messages would remain accessible.
+
+3. **Deferred Message Synchronization**: Messages sent while offline could be stored locally and automatically synced with the server once the connection is restored, preventing any potential data loss.
+
+This enhancement would make the app more robust and user-friendly, ensuring a smooth experience regardless of connectivity issues.
+
 ## Technologies Used
 - **Service Workers**: To manage messaging between tabs.
 - **HTML, CSS, JavaScript**: For the app's structure, design, and logic.
