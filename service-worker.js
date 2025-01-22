@@ -4,13 +4,15 @@
  */
 const CACHE_NAME = "app-cache-v1";
 
+//If the app is opened with Live Server locally, the routes must be changing
+//by deleting the string /Real-Time-Chat-App 
 const ASSETS_TO_CACHE = [
-  "/index.html",
-  "/assets/css/form.css",
-  "/assets/css/layout.css",
-  "/assets/css/reset.css",
-  "/assets/css/typography.css",
-  "/assets/images/icons/app-icon.png",
+  "/Real-Time-Chat-App/index.html",
+  "/Real-Time-Chat-App/assets/css/form.css",
+  "/Real-Time-Chat-App/assets/css/layout.css",
+  "/Real-Time-Chat-App/assets/css/reset.css",
+  "/Real-Time-Chat-App/assets/css/typography.css",
+  "/Real-Time-Chat-App/assets/images/icons/app-icon.png",
 ];
 
 self.addEventListener("install", (event) => {

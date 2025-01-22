@@ -10,6 +10,7 @@ if (navigator.serviceWorker) {
     .register(`${basePath}service-worker.js`)
     .then((registration) => {
       console.log("Service Worker successfully registered: ", registration);
+      registration.active.postMessage({ basePath });
     })
     .catch((error) => {
       console.log("Error registering the Service Worker: ", error);
@@ -29,7 +30,6 @@ window.onbeforeunload = () => {
     });
   }
 };
-
 
 messageForm.addEventListener("submit", async (event) => {
   event.preventDefault();
